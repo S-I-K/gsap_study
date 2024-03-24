@@ -12,11 +12,39 @@ $(()=>{
     const box8 = $('#section8 .parallax__item__img');
     const box9 = $('#section9 .parallax__item__img');
 
-    /* 01 */
+    /* 01: to */
     gsap.to(box1, {
         x: 400,
         duration: 2,
         'border-radius': '300',
-        'rotation': 360
+        'rotate': 360
     });
+
+    /* 02: scrollTrigger */
+    gsap.to(box2, {
+        x: 400,
+        'rotate': 360,
+        'border-radius': 300,
+        'duration': 2,
+        scrollTrigger: {
+            trigger: $('#section2'),
+            start: '30% 100%',
+            end: '60%, 50%',
+            // markers: true,
+            scrub: true,
+        }
+    })
+
+    /* 03: scrollTrigger toggleActions */
+    gsap.to(box3, {
+        x: 400,
+        'rotate': 360,
+        'border-radius': 300,
+        'duration': 2,
+        scrollTrigger: {
+            trigger: $('#section3'),
+            toggleActions: 'play none reverse none',
+            /* onEnter onLeave onEnterBack onLeaveBack */
+        }
+    })
 });
