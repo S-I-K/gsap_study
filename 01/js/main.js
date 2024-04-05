@@ -29,13 +29,13 @@ $(()=>{
         scrollTrigger: {
             trigger: $('#section2'),
             start: '30% 100%',
-            end: '60%, 50%',
+            end: '60% 50%',
             // markers: true,
             scrub: true,
         }
-    })
+    });
 
-    /* 03: scrollTrigger toggleActions */
+    /* 03: scrollTrigger, toggleActions */
     gsap.to(box3, {
         x: 400,
         'rotate': 360,
@@ -46,5 +46,53 @@ $(()=>{
             toggleActions: 'play none reverse none',
             /* onEnter onLeave onEnterBack onLeaveBack */
         }
-    })
+    });
+
+    /* 04: scrollTrigger, start, end */
+    gsap.to(box4, {
+        x: 400,
+        'rotate': 360,
+        'border-radius': 100,
+        'duration': 2,
+
+        scrollTrigger: {
+            trigger: $('#section4'),
+            start: '30% 100%',
+            end: '60% 50%',
+            // markers: true,
+        }
+    });
+
+    /* 05: scrub */
+    gsap.to(box5, {
+        x: 400,
+        'rotate': 360,
+        'border-radius': 100,
+        'duration': 2,
+
+        scrollTrigger: {
+            trigger: $('#section5'),
+            start: '30% 100%',
+            end: '60% 50%',
+            markers: false,
+            scrub: 2,
+        }
+    });
+
+    /* 06: pin  */
+    gsap.to(box6, {
+        x: 400,
+        'rotate': 360,
+        'border-radius': 100,
+        'duration': 2,
+
+        scrollTrigger: {
+            trigger: box6,
+            start: 'top 50%',
+            end: 'bottom 20%',
+            markers: true,
+            scrub: 2,
+            pin: true,
+        }
+    });
 });
